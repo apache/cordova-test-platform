@@ -1,0 +1,42 @@
+{
+  "name": "cordova-platform-test",
+  "version": "1.0.0",
+  "description": "Platform that simply stubs the platformAPI for testing and education",
+  "create": "src/create",
+  "main": "src/Api.js",
+  "scripts": {
+    "cover": "istanbul cover --root bin/templates/cordova --print detail jasmine",
+    "jshint": "jshint src && jshint spec",
+    "test": "npm run jshint && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cordova/cordova-platform-test.git"
+  },
+  "keywords": [
+    "apache",
+    "cordova",
+    "cordova-platform"
+  ],
+  "author": "Apache Software Foundation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cordova/cordova-platform-test/issues"
+  },
+  "homepage": "https://github.com/cordova/cordova-platform-test#readme",
+  "maintainers": [
+    {
+      "name": "stevegill",
+      "email": "stevengill97@gmail.com"
+    },
+    {
+      "name": "Jesse MacFadyen",
+      "email": "purplecabbage@apache.org"
+    }
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "jshint": "^2.9.4"
+  }
+}

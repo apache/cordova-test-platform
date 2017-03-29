@@ -1,0 +1,16 @@
+
+*.user
+.DS_Store
+bld
+*.opensdf
+*.suo
+*.sdf
+Debug
+obj
+Thumbs.db
+/.idea/
+npm-debug.log
+
+
+# Skip node_modules
+node_modules/
