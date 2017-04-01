@@ -7,7 +7,8 @@
   "scripts": {
     "cover": "istanbul cover --root bin/templates/cordova --print detail jasmine",
     "jshint": "jshint src && jshint spec",
-    "test": "npm run jshint && jasmine"
+    "jasmine": "jasmine --captureExceptions --color",
+    "test": "npm run jshint && npm run jasmine"
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,11 @@
       "email": "purplecabbage@apache.org"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "cordova-common": "^2.0.1",
+    "nopt": "^4.0.1",
+    "shelljs": "^0.3.0"
+  },
   "devDependencies": {
     "jasmine": "^2.5.3",
     "jshint": "^2.9.4"
