@@ -1,6 +1,6 @@
 {
   "name": "cordova-platform-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Platform that simply stubs the platformAPI for testing and education",
   "create": "src/create",
   "main": "src/Api.js",
