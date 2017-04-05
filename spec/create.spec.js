@@ -37,7 +37,7 @@ function createAndBuild(projectname, projectid) {
 
     // create the project
     command = util.format('"%s" "%s/%s" "%s" "%s"', createScriptPath, tmpDir, projectname, projectid, projectname);
-    shell.echo(command);
+    //shell.echo(command);
     return_code = shell.exec(command).code;
     expect(return_code).toBe(0);
 
@@ -55,7 +55,7 @@ function createAndBuild(projectname, projectid) {
 
     // // build the project
     command = util.format('"%s/cordova/build"', path.join(tmpDir, projectname));
-    shell.echo(command);
+    //shell.echo(command);
     return_code = shell.exec(command, { silent: true }).code;
     expect(return_code).toBe(0);
 
@@ -79,40 +79,40 @@ describe('create', function() {
         createAndBuild(projectname, projectid);
     });
 
-    // it('create project with ascii name, and spaces', function() {
-    //     var projectname = 'test create';
-    //     var projectid = 'com.test.app2';
+    it('create project with ascii name, and spaces', function() {
+        var projectname = 'test create';
+        var projectid = 'com.test.app2';
 
-    //     createAndBuild(projectname, projectid);
-    // });
+        createAndBuild(projectname, projectid);
+    });
 
-    // it('create project with unicode name, no spaces', function() {
-    //     var projectname = '応応応応用用用用';
-    //     var projectid = 'com.test.app3';
+    it('create project with unicode name, no spaces', function() {
+        var projectname = '応応応応用用用用';
+        var projectid = 'com.test.app3';
 
-    //     createAndBuild(projectname, projectid);
-    // });
+        createAndBuild(projectname, projectid);
+    });
 
-    // it('create project with unicode name, and spaces', function() {
-    //     var projectname = '応応応応 用用用用';
-    //     var projectid = 'com.test.app4';
+    it('create project with unicode name, and spaces', function() {
+        var projectname = '応応応応 用用用用';
+        var projectid = 'com.test.app4';
 
-    //     createAndBuild(projectname, projectid);
-    // });
+        createAndBuild(projectname, projectid);
+    });
 
-    // it('create project with ascii+unicode name, no spaces', function() {
-    //     var projectname = '応応応応hello用用用用';
-    //     var projectid = 'com.test.app5';
+    it('create project with ascii+unicode name, no spaces', function() {
+        var projectname = '応応応応hello用用用用';
+        var projectid = 'com.test.app5';
 
-    //     createAndBuild(projectname, projectid);
-    // });
+        createAndBuild(projectname, projectid);
+    });
 
-    // it('create project with ascii+unicode name, and spaces', function() {
-    //     var projectname = '応応応応 hello 用用用用';
-    //     var projectid = 'com.test.app6';
+    it('create project with ascii+unicode name, and spaces', function() {
+        var projectname = '応応応応 hello 用用用用';
+        var projectid = 'com.test.app6';
 
-    //     createAndBuild(projectname, projectid);
-    // });
+        createAndBuild(projectname, projectid);
+    });
 
 });
 

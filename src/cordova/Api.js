@@ -52,7 +52,6 @@ Api.createPlatform = function (destination, config, options, events) {
     shell.mkdir(path.join(destination,'cordova'));
 
     var apiPath = path.join(__dirname, '**'); // default value
-    console.log("apiPath = " + apiPath);
     // does options contain the info we desire?
     if(options && options.platformDetails) {
         apiPath = path.join(options.platformDetails.libDir, '**');
