@@ -31,7 +31,7 @@
 
 var path = require('path');
 var ConfigParser = require('cordova-common').ConfigParser;
-var Api = require('../Api');
+var Api = require('../cordova/Api');
 
 var argv = require('nopt')({
     'help' : Boolean,

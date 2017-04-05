@@ -51,13 +51,15 @@ Api.createPlatform = function (destination, config, options, events) {
     shell.mkdir(destination);
     shell.mkdir(path.join(destination,'cordova'));
 
-    var apiPath = path.join(__dirname, 'Api.js'); // default value
+    var apiPath = path.join(__dirname, '**'); // default value
+    console.log("apiPath = " + apiPath);
     // does options contain the info we desire?
     if(options && options.platformDetails) {
-        apiPath = path.join(options.platformDetails.libDir, 'src/Api.js');
+        apiPath = path.join(options.platformDetails.libDir, '**');
     }
+
     // move a copy of our api to the new project
-    shell.cp(apiPath, path.join(destination, 'cordova/Api.js'));
+    shell.cp(apiPath, path.join(destination, 'cordova'));
 
     var result = Promise.resolve();
     result.then(function(){

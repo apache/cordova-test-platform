@@ -30,7 +30,7 @@ describe('can get the Api', function() {
         expect(typeof Api.createPlatform).toBe('function');
 
 // TODO: make this do something real
-        var promise = Api.createPlatform("../tmp");
+        var promise = Api.createPlatform("../fixtures/tmp");
         expect(promise).toBeDefined();
         expect(promise.then).toBeDefined();
         promise.then(function(res) {
