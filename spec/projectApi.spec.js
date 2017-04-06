@@ -17,7 +17,7 @@
  under the License.
  */
 
-var Api = require("../src/Api");
+var Api = require("../src/cordova/Api");
 
 describe('can get the Api', function() {
 
@@ -30,7 +30,7 @@ describe('can get the Api', function() {
         expect(typeof Api.createPlatform).toBe('function');
 
 // TODO: make this do something real
-        var promise = Api.createPlatform("../fixtures/tmp");
+        var promise = Api.createPlatform("../tmp");
         expect(promise).toBeDefined();
         expect(promise.then).toBeDefined();
         promise.then(function(res) {

@@ -26,6 +26,7 @@ var cordova_bin = path.join(__dirname, '../src/bin');// is this the same on all 
 var tmpDir = path.join(__dirname, '../temp');
 
 function createAndBuild(projectname, projectid) {
+
     var return_code = 0;
     var command;
 
