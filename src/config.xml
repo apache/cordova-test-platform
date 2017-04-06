@@ -17,11 +17,12 @@
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         id        = "io.cordova.helloCordova"
-        version   = "2.0.0">
-    <name>Hello Cordova</name>
+        version   = "0.0.4">
+    <name>Test Cordova Platform</name>
 
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        This is a basic implementation of the platform API and demonstrates the minimum
+        that any new platform must implement.
     </description>
 
     <author href="http://cordova.io" email="dev@cordova.apache.org">
