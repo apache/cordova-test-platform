@@ -2,8 +2,8 @@
   "name": "cordova-platform-test",
   "version": "0.0.2",
   "description": "Platform that simply stubs the platformAPI for testing and education",
-  "create": "src/create",
-  "main": "src/Api.js",
+  "create": "src/bin/create",
+  "main": "src/cordova/Api.js",
   "scripts": {
     "cover": "istanbul cover --root bin/templates/cordova --print detail jasmine",
     "jshint": "jshint src && jshint spec",
