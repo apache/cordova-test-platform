@@ -19,7 +19,7 @@
 #
 -->
 
-# cordova-platform-test
+# cordova-test-platform
 
 This repo contains the code for an [Apache Cordova](http://cordova.apache.org) platform that allows you to build applications that target NOTHING. This platform is purely for testing, although it is also a good resource to see the minimum requirements to implement a new platform.
 

@@ -1,6 +1,6 @@
 {
-  "name": "cordova-platform-test",
-  "version": "0.0.4",
+  "name": "cordova-test-platform",
+  "version": "0.0.5",
   "description": "Platform that simply stubs the platformAPI for testing and education",
   "create": "src/bin/create",
   "main": "src/cordova/Api.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cordova/cordova-platform-test.git"
+    "url": "git+https://github.com/apache/cordova-test-platform.git"
   },
   "keywords": [
     "apache",
@@ -22,9 +22,9 @@
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/cordova/cordova-platform-test/issues"
+    "url": "https://issues.apache.org/jira/browse/CB"
   },
-  "homepage": "https://github.com/cordova/cordova-platform-test#readme",
+  "homepage": "https://github.com/cordova/cordova-test-platform#readme",
   "maintainers": [
     {
       "name": "stevegill",
