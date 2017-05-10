@@ -17,7 +17,10 @@
  under the License.
  */
 
-var Api = require("../src/cordova/Api");
+var Api = require("..");
+/*
+    Note: require is expecting the package.json to define "main" with the path to Api.js for the platform.
+*/
 
 describe('can get the Api', function() {
 
