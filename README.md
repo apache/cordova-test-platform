@@ -21,14 +21,27 @@
 
 # cordova-test-platform
 
-This repo contains the code for an [Apache Cordova](http://cordova.apache.org) platform that allows you to build applications that target NOTHING. This platform is purely for testing, although it is also a good resource to see the minimum requirements to implement a new platform.
-
+This repo contains the code for an [Apache Cordova](http://cordova.apache.org)
+platform that allows you to build applications that target NOTHING. This
+platform is purely for testing, although it is also a good resource to see the
+minimum requirements to implement a new platform.
 
 [Apache Cordova](http://cordova.apache.org) is a project of [The Apache Software Foundation (ASF)](http://apache.org)
 
+# How to Use This
+
+This repository contains a reference implementation of Cordova's Platform API.
+The Platform API defines interfaces for Cordova tooling to be able to create,
+build/compile, run/emulate and clean Cordova projects targeted at a specific
+platform. Core Cordova platforms such as cordova-android and cordova-ios
+implement this API. This API is then used by tools such as cordova-cli and
+cordova-lib when managing platform-specific actions in cross-platform Cordova
+projects.
 
 # Report Issues
 Report them at the [Apache Cordova Issue Tracker](https://issues.apache.org/jira/browse/CB).
 
 # Further Reading
 - [Apache Cordova Documentation](http://docs.cordova.io)
+- https://github.com/cordova/cordova-discuss/pull/9
+- https://github.com/cordova/cordova-discuss/pull/12
