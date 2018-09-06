@@ -38,9 +38,6 @@ implement this API. This API is then used by tools such as cordova-cli and
 cordova-lib when managing platform-specific actions in cross-platform Cordova
 projects.
 
-# Report Issues
-Report them at the [Apache Cordova Issue Tracker](https://issues.apache.org/jira/browse/CB).
-
 # Further Reading
 - [Apache Cordova Documentation](http://docs.cordova.io)
 - https://github.com/cordova/cordova-discuss/pull/9
