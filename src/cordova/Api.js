@@ -63,7 +63,7 @@ Api.createPlatform = function (destination, config, options, events) {
     events.emit('log', '\tPath: ' + destination);
     events.emit('log', '\tName: ' + projectName);
 
-    shell.mkdir(destination);
+    shell.mkdir('-p', destination);
 
     // move a copy of our api to the new project
     shell.cp('-r',apiSrcPath, destination);
