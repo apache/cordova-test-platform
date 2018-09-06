@@ -7,8 +7,7 @@
   "scripts": {
     "cover": "istanbul cover --root bin/templates/cordova --print detail jasmine",
     "jshint": "jshint src && jshint spec",
-    "jasmine": "jasmine --captureExceptions --color",
-    "test": "npm run jshint && npm run jasmine"
+    "test": "npm run jshint && jasmine"
   },
   "repository": {
     "type": "git",
