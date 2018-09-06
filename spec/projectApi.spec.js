@@ -37,7 +37,7 @@ describe('can get the Api', function() {
         expect(Api).toBeDefined();
     });
 
-    it('should export static createPlatform function', function(done) {
+    it('should export static createPlatform function', function() {
         expect(Api.createPlatform).toBeDefined();
         expect(typeof Api.createPlatform).toBe('function');
 
@@ -45,15 +45,7 @@ describe('can get the Api', function() {
         var promise = Api.createPlatform(tmpDir);
         expect(promise).toBeDefined();
         expect(promise.then).toBeDefined();
-        promise.then(function(res) {
-            console.log('result = ' + res);
-            console.log("spec-success");
-            done();
-        },
-        function(err) {
-            console.log("spec-error " + err);
-            done();
-        });
+        return promise;
     });
 
     it('should export static updatePlatform function', function() {
