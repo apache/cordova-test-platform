@@ -75,13 +75,13 @@ Api.createPlatform = function (destination, config, options, events) {
 
 
 Api.updatePlatform = function (destination, options, events) {
-    // console.log("test-platform:Api:updatePlatform");
+    events.emit('log', "test-platform:Api:updatePlatform");
     // todo?: create projectInstance and fulfill promise with it.
     return Promise.resolve();
 };
 
 Api.prototype.getPlatformInfo = function () {
-    console.log("test-platform:Api:getPlatformInfo");
+    events.emit('log', "test-platform:Api:getPlatformInfo");
     // return PlatformInfo object
 
     return {
@@ -94,36 +94,36 @@ Api.prototype.getPlatformInfo = function () {
 };
 
 Api.prototype.prepare = function (cordovaProject) {
-    console.log("test-platform:Api:prepare");
+    events.emit('log', "test-platform:Api:prepare");
     return Promise.resolve();
 };
 
 Api.prototype.addPlugin = function (plugin, installOptions) {
-    console.log("test-platform:Api:addPlugin");
+    events.emit('log', "test-platform:Api:addPlugin");
     return Promise.resolve();
 };
 
 Api.prototype.removePlugin = function (plugin, uninstallOptions) {
-    console.log("test-platform:Api:removePlugin");
+    events.emit('log', "test-platform:Api:removePlugin");
     return Promise.resolve();
 };
 
 Api.prototype.build = function (buildOptions) {
-    console.log("test-platform:Api:build");
+    events.emit('log', "test-platform:Api:build");
     return Promise.resolve();
 };
 
 Api.prototype.run = function(runOptions) {
-    console.log("test-platform:Api:run");
+    events.emit('log', "test-platform:Api:run");
 };
 
 Api.prototype.clean = function(cleanOptions) {
-    console.log("test-platform:Api:clean");
+    events.emit('log', "test-platform:Api:clean");
     return Promise.resolve();
 };
 
 Api.prototype.requirements = function() {
-    console.log("test-platform:Api:requirements");
+    events.emit('log', "test-platform:Api:requirements");
     return true;
 };
 
