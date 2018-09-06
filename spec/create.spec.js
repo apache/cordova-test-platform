@@ -39,7 +39,7 @@ function createAndBuild(projectname, projectid) {
     // create the project
     command = util.format('"%s" "%s/%s" "%s" "%s"', createScriptPath, tmpDir, projectname, projectid, projectname);
     //shell.echo(command);
-    return_code = shell.exec(command).code;
+    return_code = shell.exec(command, { silent: true }).code;
     expect(return_code).toBe(0);
 
 
