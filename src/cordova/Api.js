@@ -68,10 +68,6 @@ Api.createPlatform = function (destination, config, options, events) {
     // move a copy of our api to the new project
     shell.cp('-r',apiSrcPath, destination);
 
-    // move our node_modules
-    var srcModulePath = path.join(__dirname,'../../node_modules');
-    shell.cp('-r',srcModulePath,destination);
-
     // I promise I will return
     return Promise.resolve(new Api(PLATFORM_NAME,destination,events));
 
