@@ -17,34 +17,35 @@
  under the License.
  */
 
+var shell = require('shelljs');
+var getTmpDir = require('./support/helpers').getTmpDir;
 var Api = require("..");
 /*
     Note: require is expecting the package.json to define "main" with the path to Api.js for the platform.
 */
 
+var tmpDir = getTmpDir();
+
 describe('can get the Api', function() {
+
+    afterAll(function() {
+        process.chdir(__dirname);
+        shell.rm('-rf', tmpDir);
+    });
 
     it('should be defined', function() {
         expect(Api).toBeDefined();
     });
 
-    it('should export static createPlatform function', function(done) {
+    it('should export static createPlatform function', function() {
         expect(Api.createPlatform).toBeDefined();
         expect(typeof Api.createPlatform).toBe('function');
 
-// TODO: make this do something real
-        var promise = Api.createPlatform("../tmp");
+        // TODO: make this do something real
+        var promise = Api.createPlatform(tmpDir);
         expect(promise).toBeDefined();
         expect(promise.then).toBeDefined();
-        promise.then(function(res) {
-            console.log('result = ' + res);
-            console.log("spec-success");
-            done();
-        },
-        function(err) {
-            console.log("spec-error " + err);
-            done();
-        });
+        return promise;
     });
 
     it('should export static updatePlatform function', function() {

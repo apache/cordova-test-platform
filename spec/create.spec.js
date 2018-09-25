@@ -21,9 +21,10 @@ var shell = require('shelljs');
 var fs = require('fs');
 var path = require('path');
 var util = require('util');
+var getTmpDir = require('./support/helpers').getTmpDir;
 
 var cordova_bin = path.join(__dirname, '../src/bin');// is this the same on all platforms?
-var tmpDir = path.join(__dirname, '../temp');
+var tmpDir = getTmpDir();
 
 function createAndBuild(projectname, projectid) {
 
