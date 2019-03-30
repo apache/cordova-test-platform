@@ -9,21 +9,21 @@ var shell = require('shelljs');
 var path = require('path');
 
 var CordovaLogger = require('cordova-common').CordovaLogger;
-var selfEvents = require('cordova-common').events;
+var events = require('cordova-common').events;
 
 var PLATFORM_NAME = 'testplatform';
 
 function setupEvents(externalEventEmitter) {
     if (externalEventEmitter) {
         // This will make the platform internal events visible outside
-        selfEvents.forwardEventsTo(externalEventEmitter);
+        events.forwardEventsTo(externalEventEmitter);
         return externalEventEmitter;
     }
 
     // There is no logger if external emitter is not present,
     // so attach a console logger
-    CordovaLogger.get().subscribe(selfEvents);
-    return selfEvents;
+    CordovaLogger.get().subscribe(events);
+    return events;
 }
 
 function Api(platform, platformRootDir, events) {
@@ -47,9 +47,9 @@ function Api(platform, platformRootDir, events) {
 
 }
 
-Api.createPlatform = function (destination, config, options, events) {
+Api.createPlatform = function (destination, config, options, externalEvents) {
 
-    events = setupEvents(events);
+    events = setupEvents(externalEvents);
 
     // create the destination and the standard place for our api to live
     // platforms/platformName/cordova/Api.js
@@ -74,7 +74,7 @@ Api.createPlatform = function (destination, config, options, events) {
 };
 
 
-Api.updatePlatform = function (destination, options, events) {
+Api.updatePlatform = function (destination, options) {
     events.emit('log', "test-platform:Api:updatePlatform");
     // todo?: create projectInstance and fulfill promise with it.
     return Promise.resolve();
