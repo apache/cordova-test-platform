@@ -19,14 +19,6 @@
 
 # New Platform Checklist
  
-## Stand-alone scripts
- 
-bin/create scripts
-- bin/create _(typically a node script)_
-- bin/create.bat for windows
-    - windows .bat file typically just calls bin/create with node
-- invoking this script would create a platform-specific, cordova-compatible project shell
- 
 ## Package Expectations
  
 - Platforms must have a `package.json` in their root.
@@ -84,6 +76,14 @@ A call to the platforms static `Api.createPlatform` will:
         var api = new Api();
         ```
 
+## Stand-alone scripts
+ 
+- `bin/create` scripts
+    - `bin/create _(typically a node script)_
+    - `bin/create.bat` for windows
+        - windows `.bat` file typically just calls `bin/create` with node
+    - invoking this script would create a platform-specific, cordova-compatible project shell
+ 
 ## Methods
 
 These following methods are equal to the platform's executable scripts. The main difference is that they accept a structured options object instead of an array of command line arguments.
@@ -167,10 +167,6 @@ This documentation follows the following pattern:
         - path to local repo of valid plugin: `/my/cordova/repositories/cordova-plugin-globalization`
 - `.removePlugin` must return a promise either fulfilled or rejected with a `CordovaError` instance.
 
-## CLI work flow integration
-  - CLI-based workflow supports single or multiple platforms that purely leverages the Platform Api
-  - Platform centered shell tools versus cross-platform Cordova CLI workflows
-  - For more information, see [Android guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html).
 ### PlatformApi.prototype.prepare = function (cordovaProject) {};
 
 - `.prepare` should update the installed platform with provided www assets and new app configuration. This method is required for CLI work flow and should be called each time before build, so the changes, made to app configuration and www code, will be applied to the platform.
@@ -183,3 +179,8 @@ This documentation follows the following pattern:
 - `.getPlatformInfo` should return platform-specific information
 - `.getPlatformInfo` must return a `CordovaPlatform` object that contains the description of the platform's file structure and other properties of the platform (Platform's directories/main file locations such as `config.xml`, `www`, etc.).
 
+## CLI work flow integration
+
+- CLI-based workflow supports single or multiple platforms that purely leverages the Platform Api
+- Platform centered shell tools versus cross-platform Cordova CLI workflows
+- For more information, see [Android guide](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html).
