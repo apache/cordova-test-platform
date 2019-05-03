@@ -123,7 +123,8 @@ This documentation follows the following pattern:
         - (See [Android `build.json` documentation](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-buildjson).)
         - (See [iOS `build.json` documentation](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-buildjson).)
     - __buildOptions.argv__: is a raw array of command-line arguments that should be passed to the `build` command. The purpose of this property is to pass platform-specific arguments, and eventually let the platform define its own arguments processing logic.
-- `.build` must return a promise either fulfilled with an array of build artifacts (application packages) if the package was built successfully, or rejected with a `CordovaError`. The return value in most cases will contain only one item, but in some cases there could be multiple items in an output array, e.g. when multiple architectures are specified. The resultant build artifact objects are not strictly typed and may contain an arbitrary set of fields as in the sample below.
+- `.build` must return a promise either fulfilled with an array of build artifacts (application packages) if the package was built successfully, or rejected with a `CordovaError`. 
+    - The return value in most cases will contain only one item, but in some cases there could be multiple items in an output array, e.g. when multiple architectures are specified. The resultant build artifact objects are not strictly typed and may contain an arbitrary set of fields as in the sample below.
     ```
     {
         architecture: 'x86',
