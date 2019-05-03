@@ -102,9 +102,10 @@ This documentation follows the following pattern:
 - The `.requirements` must return a promise, resolved with a set of `Requirement` objects for the current platform.
 - (See [Requirements documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L385).) TODO broken link
 
-### PlatformApi.prototype.clean = function() {};
+### PlatformApi.prototype.clean = function(cleanOptions) {};
 
 - `.clean` should clean out the build artifacts from the platform's directory.
+- __cleanOptions__: TODO
 - `.clean` must return a promise either fulfilled or rejected with a `CordovaError`.
 - (See [CordovaError documentation](https://github.com/apache/cordova-common/blob/master/README.md#cordovaerror).) TODO why this link here?
 
@@ -125,14 +126,14 @@ This documentation follows the following pattern:
     - __buildOptions.argv__: is a raw array of command-line arguments that should be passed to the `build` command. The purpose of this property is to pass platform-specific arguments, and eventually let the platform define its own arguments processing logic.
 - `.build` must return a promise either fulfilled with an array of build artifacts (application packages) if the package was built successfully, or rejected with a `CordovaError`. 
     - The return value in most cases will contain only one item, but in some cases there could be multiple items in an output array, e.g. when multiple architectures are specified. The resultant build artifact objects are not strictly typed and may contain an arbitrary set of fields as in the sample below.
-    ```
-    {
-        architecture: 'x86',
-        buildType: 'debug',
-        path: '/path/to/build',
-        type: 'app'
-    }
-    ```
+        ```
+        {
+            architecture: 'x86',
+            buildType: 'debug',
+            path: '/path/to/build',
+            type: 'app'
+        }
+        ```
  
 ### PlatformApi.prototype.run = function(runOptions) {};
 
