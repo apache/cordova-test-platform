@@ -31,7 +31,8 @@
 - The PlatformApi class
     - The `PlatformApi` class is an abstraction around a particular platform that exposes all the actions, properties, and methods for this platform so they are accessible programmatically.
     - It can install & uninstall plugins with all source files, web assets and js files.
-    - It exposes a single `prepare` method to provide a way for `cordova-lib` to apply a project's setting and www content to the platform. It interpolates metadata, such as application name or description from a Cordova project's `config.xml` into the format expected by the platform. (See [`config.xml` documentation](https://cordova.apache.org/docs/en/latest/config_ref/).)
+    - It exposes a single `prepare` method to provide a way for `cordova-lib` to apply a project's setting and www content to the platform. It interpolates metadata, such as application name or description from a Cordova project's `config.xml` into the format expected by the platform. 
+        - (See [`config.xml` documentation](https://cordova.apache.org/docs/en/latest/config_ref/).)
     - Platforms that implement their own `PlatformApi` instance must implement all prototype methods of this class to be fully compatible with `cordova-lib`.
     - Required methods for platforms include: `create` , `requirements`, `prepare`, `addPlugin`, and `removePlugin`
     - Optional methods for platforms include: `build`, `run`
@@ -41,7 +42,8 @@
 - Api.js must export a static function `createPlatform(destination, cfg, options, events);` that returns a new instance of the `PlatformApi`.
     - `PlatformApi.createPlatform = function(cordovaProject, options) {};`
     - `.createPlatform`: is equal to the `bin/create` script. It should install the platform to a specified directory and create a platform project. It should accept a `CordovaProject` instance, that defines a project structure and configuration, that should be applied to the new platform, and an options object.
-    - __cordovaProject__: This is a `CordovaProject` instance that defines a project structure and configuration, that should be applied to the new platform. This argument is optional and if not defined, that platform is used as a standalone project and not as part of a Cordova project. (See [CordovaProject documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L178).)
+    - __cordovaProject__: This is a `CordovaProject` instance that defines a project structure and configuration, that should be applied to the new platform. This argument is optional and if not defined, that platform is used as a standalone project and not as part of a Cordova project. 
+        - (See [`CordovaProject` documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L178).) TODO fix link
     - __options__: This is an options object. The most common options are:
         - __options.customTemplate__: This is a path to custom template, that should override the default one from the platform.  If options.customTemplate is present `create` should copy from there instead of it's own template. Example:
             ```js
@@ -52,7 +54,7 @@
             ```
             - Templates allow developers to create apps based on boilerplate application code.
             - A default template is standard structure for a `Cordova` platform.
-            - (See [template documentation](https://cordova.apache.org/docs/en/latest/guide/cli/template.html).)
+                - (See [template documentation](https://cordova.apache.org/docs/en/latest/guide/cli/template.html).)
         - __options.link__: This is a flag that should indicate that the platform's sources will be linked to the installed platform instead of copying.
     - `.createPlatform` must return a promise, which is either fulfilled with a `PlatformApi` instance or rejected with a `CordovaError`.
  
@@ -100,14 +102,14 @@ This documentation follows the following pattern:
 - `.requirements` should perform a requirements check for the current platform. Each platform is expected to define its own set of requirements, which should be resolved before the platform can be built successfully.
     - __Example:__ the `cordova-android` platform requires tooling from the Android SDK, and uses this method to check that the operating system has access to all necessary tooling.
 - The `.requirements` must return a promise, resolved with a set of `Requirement` objects for the current platform.
-- (See [Requirements documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L385).) TODO broken link
+    - (See [Requirements documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L385).) TODO broken link
 
 ### PlatformApi.prototype.clean = function(cleanOptions) {};
 
 - `.clean` should clean out the build artifacts from the platform's directory.
 - __cleanOptions__: TODO
 - `.clean` must return a promise either fulfilled or rejected with a `CordovaError`.
-- (See [CordovaError documentation](https://github.com/apache/cordova-common/blob/master/README.md#cordovaerror).) TODO why this link here?
+    - (See [CordovaError documentation](https://github.com/apache/cordova-common/blob/master/README.md#cordovaerror).) TODO why this link here?
 
 ### PlatformApi.prototype.build = function(buildOptions) {};
 
@@ -145,8 +147,9 @@ This documentation follows the following pattern:
 ### PlatformApi.prototype.addPlugin = function (plugin, installOptions) {};
 
 - `.addPlugin` should install a plugin into a platform. It should handle all the non-www files shipped by plugin (sources, libs, assets, js-files) and accept a `PluginInfo` instance that represents the plugin that will be installed and an options object. It cannot resolve the dependencies of a plugin.
-- (See [`plugin.xml` documentation](https://cordova.apache.org/docs/en/latest/plugin_ref/spec.html).) TODO see for what?
-- __plugin__: This is a `PluginInfo` instance that should represent the plugin that will be installed. (See [PluginInfo documentation](https://github.com/apache/cordova-common/blob/master/README.md#plugininfoprovider-and-plugininfo).)
+    - (See [`plugin.xml` documentation](https://cordova.apache.org/docs/en/latest/plugin_ref/spec.html).)
+- __plugin__: This is a `PluginInfo` instance that should represent the plugin that will be installed. 
+    - (See [PluginInfo documentation](https://github.com/apache/cordova-common/blob/master/README.md#plugininfoprovider-and-plugininfo).)
     - It is expected to accept a plugin spec that should be one of the following:
         - valid plugin id that can be resolved through npm: `cordova-plugin-globalization`
         - valid npm identifier, that resolves to valid plugin: `cordova-plugin-globalization@1.0.0`
@@ -154,14 +157,16 @@ This documentation follows the following pattern:
         - path to local repo of valid plugin: `/my/cordova/repositories/cordova-plugin-globalization`
 - __installOptions__: This is an options object with the following possible options:
     - __installOptions.link__: This is a flag that should specify that plugin sources will be symlinked to app's directory instead of copying (if possible).
-    - __installOptions.variables__: This is an object that should represent variables that will be used to install a plugin. (See [variable documentation](https://cordova.apache.org/docs/en/latest/config_ref/#variable).)
+    - __installOptions.variables__: This is an object that should represent variables that will be used to install a plugin. 
+        - (See [variable documentation](https://cordova.apache.org/docs/en/latest/config_ref/#variable).)
 - `.addPlugin` must return a promise either fulfilled or rejected with a `CordovaError` instance.
 
 ### PlatformApi.prototype.removePlugin = function (plugin) {};
 
 - `.removePlugin` should remove an installed plugin from a platform. It should accept a `PluginInfo` instance that represents the plugin that will be removed and an options object.
 - __Note__: Since this method accepts the `PluginInfo` instance as an input parameter, instead of a plugin id, the caller should take care of managing and storing the `PluginInfo` instances for future uninstalls.
-- __plugin__: This is a `PluginInfo` instance that should represent the plugin that will be uninstalled. (See [PluginInfo documentation](https://github.com/apache/cordova-common/blob/master/README.md#plugininfoprovider-and-plugininfo).)
+- __plugin__: This is a `PluginInfo` instance that should represent the plugin that will be uninstalled.
+    - (See [PluginInfo documentation](https://github.com/apache/cordova-common/blob/master/README.md#plugininfoprovider-and-plugininfo).)
     - It is expected to accept a plugin spec that should be one of the following:
         - valid plugin id that can be resolved through npm: `cordova-plugin-globalization`
         - valid npm identifier, that resolves to valid plugin: `cordova-plugin-globalization@1.0.0`
@@ -173,7 +178,9 @@ This documentation follows the following pattern:
 
 - `.prepare` should update the installed platform with provided www assets and new app configuration. This method is required for CLI work flow and should be called each time before build, so the changes, made to app configuration and www code, will be applied to the platform.
 - __Note:__ `.prepare` doesn't rebuild the cordova_plugins file and doesn't reapply assets and js files installed by plugins to the platform's www directory.
-- __cordovaProject__: This is a `CordovaProject` instance, that defines a project structure and configuration, that should be applied to the platform. (See [CordovaProject documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L178).) (It contains the project's www location and `ConfigParser` instance for the project's config.)
+- __cordovaProject__: This is a `CordovaProject` instance, that defines a project structure and configuration, that should be applied to the platform. 
+    - (See [CordovaProject documentation](https://github.com/apache/cordova-android/blob/master/bin/templates/cordova/Api.js#L178).) 
+    - (It contains the project's www location and `ConfigParser` instance for the project's config.)
 - `.prepare` must return a promise either fulfilled, or rejected with a `CordovaError` instance.
  
 ### PlatformApi.prototype.getPlatformInfo = function () {};
