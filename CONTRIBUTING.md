@@ -30,8 +30,7 @@ For instructions on this, start with the
 [contribution overview](http://cordova.apache.org/contribute/).
 
 The details are explained there, but the important items are:
- - Sign and submit an Apache ICLA (Contributor License Agreement).
- - Have a Jira issue open that corresponds to your contribution.
+ - Check for Github issues that corresponds to your contribution and link or create them if necessary.
  - Run the tests so your patch doesn't break existing functionality.
 
 We look forward to your contributions!
