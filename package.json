@@ -9,10 +9,7 @@
     "jshint": "jshint src && jshint spec",
     "test": "npm run jshint && jasmine"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/apache/cordova-test-platform.git"
-  },
+  "repository": "github:apache/cordova-test-platform",
   "keywords": [
     "apache",
     "cordova",
