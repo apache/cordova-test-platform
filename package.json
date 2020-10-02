@@ -9,10 +9,7 @@
     "jshint": "jshint src && jshint spec",
     "test": "npm run jshint && jasmine"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/apache/cordova-test-platform.git"
-  },
+  "repository": "github:apache/cordova-test-platform",
   "keywords": [
     "apache",
     "cordova",
@@ -20,9 +17,7 @@
   ],
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://issues.apache.org/jira/browse/CB"
-  },
+  "bugs": "https://github.com/apache/cordova-test-platform/issues",
   "homepage": "https://github.com/cordova/cordova-test-platform#readme",
   "maintainers": [
     {
