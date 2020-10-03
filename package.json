@@ -19,16 +19,6 @@
   "license": "Apache-2.0",
   "bugs": "https://github.com/apache/cordova-test-platform/issues",
   "homepage": "https://github.com/cordova/cordova-test-platform#readme",
-  "maintainers": [
-    {
-      "name": "stevegill",
-      "email": "stevengill97@gmail.com"
-    },
-    {
-      "name": "Jesse MacFadyen",
-      "email": "purplecabbage@apache.org"
-    }
-  ],
   "dependencies": {
     "cordova-common": "^3.0.0",
     "nopt": "^4.0.1",
