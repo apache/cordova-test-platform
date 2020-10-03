@@ -20,7 +20,6 @@
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
   "bugs": "https://github.com/apache/cordova-test-platform/issues",
-  "homepage": "https://github.com/cordova/cordova-test-platform#readme",
   "dependencies": {
     "cordova-common": "^3.0.0",
     "nopt": "^4.0.1",
