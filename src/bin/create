@@ -57,7 +57,7 @@ if (argv.help || !projectPath) {
 else {
     var config = new ConfigParser(path.resolve(__dirname, '../config.xml'));
 
-    // apply overrides (package and project names
+    // apply overrides (package and project names)
     if (argv.argv.remain[1]) {
         config.setPackageName(argv.argv.remain[1]);
     }
