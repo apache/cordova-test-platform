@@ -40,5 +40,5 @@ projects.
 
 # Further Reading
 - [Apache Cordova Documentation](http://docs.cordova.io)
-- https://github.com/cordova/cordova-discuss/pull/9
-- https://github.com/cordova/cordova-discuss/pull/12
+- [https://github.com/cordova/cordova-discuss/pull/9](https://github.com/cordova/cordova-discuss/pull/9)
+- [https://github.com/cordova/cordova-discuss/pull/12](https://github.com/cordova/cordova-discuss/pull/12)
