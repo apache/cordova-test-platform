@@ -21,7 +21,7 @@
   "license": "Apache-2.0",
   "bugs": "https://github.com/apache/cordova-test-platform/issues",
   "dependencies": {
-    "cordova-common": "^3.0.0",
+    "cordova-common": "^5.0.0",
     "nopt": "^4.0.1",
     "shelljs": "^0.3.0"
   },
