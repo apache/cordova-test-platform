@@ -26,19 +26,23 @@ platform that allows you to build applications that target NOTHING. This
 platform is purely for testing, although it is also a good resource to see the
 minimum requirements to implement a new platform.
 
-[Apache Cordova](http://cordova.apache.org) is a project of [The Apache Software Foundation (ASF)](http://apache.org)
+## Background
 
-# How to Use This
+This repository contains a reference implementation of Cordova's "Platform API". The Platform API defines interfaces for Cordova tooling to be able to create, build/compile, run/emulate and clean Cordova projects targeted at a specific platform. Core Cordova platforms such as [`cordova-android`](https://github.com/apache/cordova-android) and [`cordova-ios`](https://github.com/apache/cordova-ios) implement this API. This API is then used by tools such as [`cordova-cli`](https://github.com/apache/cordova-cli) and [`cordova-lib`](https://github.com/apache/cordova-lib) when managing platform-specific actions in cross-platform Cordova projects.
 
-This repository contains a reference implementation of Cordova's Platform API.
-The Platform API defines interfaces for Cordova tooling to be able to create,
-build/compile, run/emulate and clean Cordova projects targeted at a specific
-platform. Core Cordova platforms such as cordova-android and cordova-ios
-implement this API. This API is then used by tools such as cordova-cli and
-cordova-lib when managing platform-specific actions in cross-platform Cordova
-projects.
+You can read more about the requirements in [PlatformRequirements.md](PlatformRequirements.md) as well.
 
-# Further Reading
+## Usage
+
+To add this platform to a test project using Cordova CLI run:
+
+```
+cordova platform add https://github.com/apache/cordova-test-platform
+```
+
+## Further Reading
+
 - [Apache Cordova Documentation](http://docs.cordova.io)
-- https://github.com/cordova/cordova-discuss/pull/9
-- https://github.com/cordova/cordova-discuss/pull/12
+- Historical
+    - https://github.com/cordova/cordova-discuss/pull/9
+    - https://github.com/cordova/cordova-discuss/pull/12
