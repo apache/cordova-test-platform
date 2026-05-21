@@ -66,10 +66,10 @@ Api.createPlatform = function (destination, config, options, externalEvents) {
     shell.mkdir('-p', destination);
 
     // move a copy of our api to the new project
-    shell.cp('-r',apiSrcPath, destination);
+    shell.cp('-r', apiSrcPath, destination);
 
     // I promise I will return
-    return Promise.resolve(new Api(PLATFORM_NAME,destination,events));
+    return Promise.resolve(new Api(PLATFORM_NAME, destination, events));
 
 };
 
@@ -85,7 +85,7 @@ Api.prototype.getPlatformInfo = function () {
     // return PlatformInfo object
 
     return {
-        "locations":this.locations,
+        "locations": this.locations,
         "root": this.root,
         "name": this.platform,
         "version": { "version" : "1.0.0" },
