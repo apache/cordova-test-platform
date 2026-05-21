@@ -23,7 +23,7 @@
   "dependencies": {
     "cordova-common": "^3.0.0",
     "nopt": "^4.0.1",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
     "jasmine": "^2.5.3",
